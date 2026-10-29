@@ -1,0 +1,31 @@
+# ============================================
+#  RTP Duels configuration
+# ============================================
+
+# Which world duels take place in, by exact world name - always the Overworld,
+# regardless of which world either player is currently standing in (so a duel
+# started from the Nether or End still happens here). If this world name doesn't
+# exist on your server, RTP Duels falls back to the first Overworld-type world it
+# can find, and if there's truly none, to whichever world the target is in.
+teleport-world: "world"
+
+# How far from world spawn (in blocks) the random duel location can land.
+teleport-radius: 6000
+
+# How long a duel request stays valid before it's considered expired, in seconds.
+request-timeout-seconds: 60
+
+# How many times to re-roll a random spot if it lands somewhere unsafe (lava,
+# water, or the void) before giving up and falling back to world spawn instead.
+# Water is excluded on purpose - duels only ever land on actual land.
+max-location-attempts: 20
+
+# How far apart (in blocks) the two duelists land from each other at the chosen spot,
+# facing one another.
+spawn-separation: 3
+
+# While either player is in one of the two frozen countdown phases, nobody else
+# can teleport (via /tpa, warps, etc.) within this many blocks of them - stops
+# third parties from hopping in to interfere or spectate mid-teleport. Does not
+# affect the duelists' own scripted teleport at the countdown's midpoint.
+duel-teleport-protection-radius: 15

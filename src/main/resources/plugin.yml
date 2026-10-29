@@ -1,0 +1,23 @@
+name: RTPDuels
+version: '${project.version}'
+main: com.rtpduels.plugin.RTPDuels
+# 1.13 is the lowest value Bukkit accepts. Servers older than 1.13 simply ignore this line.
+api-version: '1.13'
+author: RTPDuels
+description: /duel a player - they accept or decline (in chat or by command), and on accept both get teleported to the same random land-only spot.
+softdepend: [PlaceholderAPI]
+folia-supported: true
+
+commands:
+  duel:
+    description: Challenge a player to a duel, or accept/decline your most recent one
+    usage: /duel <player|accept|decline>
+    permission: quickduel.use
+
+permissions:
+  quickduel.use:
+    description: Allows use of /duel
+    default: true
+  quickduel.admin:
+    description: Bypasses the command-block and teleport-block restrictions during a duel countdown
+    default: op
